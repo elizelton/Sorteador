@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.materialdesignicons.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PrincipalController">
+    <children>
+        <VBox prefHeight="400.0" prefWidth="605.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox prefHeight="100.0" prefWidth="600.0">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-: 15;">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#btnSortearClick" style="fx-border-radius: 20; -fx-background-color: #D8DAD3;">
+                                    <graphic>
+                                        <ImageView fx:id="imgVwPremio" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox prefHeight="300.0" prefWidth="600.0">
+                    <children>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefWidth="600.0">
+                            <items>
+                                <AnchorPane minHeight="50.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                              <HBox alignment="CENTER_LEFT" layoutX="1.0" prefHeight="23.0" prefWidth="598.0" spacing="5.0" style="-fx-background-color: #D8DAD3;">
+                                 <children>
+                                    <Label text="%lbl.pessoa.text" />
+                                    <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                                <MaterialDesignIconView fx:id="btnIncluirPessoa" glyphName="PLUS" onMouseClicked="#acIncluirPessoa" size="1.3em" />
+                                                <MaterialDesignIconView fx:id="btnAlterarPessoa" glyphName="PENCIL" onMouseClicked="#acAlterarPessoa" size="1.3em" />
+                                                <MaterialDesignIconView fx:id="btnExcluirPessoa" glyphName="DELETE" onMouseClicked="#acExcluirPessoa" size="1.3em" />
+                                 </children>
+                              </HBox>
+                                        <TableView fx:id="tblViewPessoa" layoutX="-1.0" layoutY="21.0" minHeight="20.0" prefHeight="125.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="21.0">
+                                            <columns>
+                                                <TableColumn prefWidth="188.0" text="%lbl.nome.text">
+                                                    <cellValueFactory>
+                                                        <PropertyValueFactory property="nome" />
+                                                    </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn minWidth="3.0" prefWidth="411.0" text="%lbl.url.text">
+                                                    <cellValueFactory>
+                                                        <PropertyValueFactory property="url" />
+                                                    </cellValueFactory>
+                                                </TableColumn>
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane minHeight="50.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                              <HBox prefHeight="23.0" prefWidth="598.0" spacing="5.0" style="-fx-background-color: #D8DAD3;">
+                                 <children>
+                                    <Label text="%lbl.premio.tbview" />
+                                    <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                                <MaterialDesignIconView fx:id="btnIncluirPremio" glyphName="PLUS" onMouseClicked="#acIncluirPremio" size="1.3em" />
+                                                <MaterialDesignIconView fx:id="btnAlterarPremio" glyphName="PENCIL" onMouseClicked="#acAlterarPremio" size="1.3em" />
+                                                <MaterialDesignIconView fx:id="btnExcluirPremio" glyphName="DELETE" onMouseClicked="#acExcluirPremio" size="1.3em" />
+                                 </children>
+                              </HBox>
+                                        <TableView fx:id="tblViewPremio" layoutY="21.0" prefHeight="125.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="21.0">
+                                            <columns>
+                                                <TableColumn prefWidth="188.0" text="%lbl.premio.text">
+                                                    <cellValueFactory>
+                                                        <PropertyValueFactory property="nome" />
+                                                    </cellValueFactory>
+                                                </TableColumn> 
+                                                <TableColumn minWidth="0.0" prefWidth="408.0" text="%lbl.descricao.tex">
+                                                    <cellValueFactory>
+                                                        <PropertyValueFactory property="descricao" />
+                                                    </cellValueFactory>
+                                                </TableColumn>
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                            </items>
+                        </SplitPane>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
