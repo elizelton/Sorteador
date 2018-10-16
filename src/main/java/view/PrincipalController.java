@@ -148,6 +148,7 @@ public class PrincipalController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
+
         imgVwPremio.setImage(new Image("/img/premio.png"));
         tblViewPremio.setItems(FXCollections.observableList(premioRepository.findAll(new Sort(new Sort.Order("nome")))));
         tblViewPessoa.setItems(FXCollections.observableList(pessoaRepository.findAll(new Sort(new Sort.Order("nome")))));
@@ -155,5 +156,7 @@ public class PrincipalController implements Initializable
         btnExcluirPessoa.visibleProperty().bind(btnAlterarPessoa.visibleProperty());
         btnAlterarPremio.visibleProperty().bind(Bindings.isEmpty((tblViewPremio.getSelectionModel().getSelectedItems())).not());
         btnExcluirPremio.visibleProperty().bind(btnAlterarPremio.visibleProperty());
+
+
     }
 }

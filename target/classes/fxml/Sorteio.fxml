@@ -5,42 +5,51 @@
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="550.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SorteioController">
     <stylesheets>
         <URL value="@/styles/Styles.css" />
     </stylesheets>
-   <children>
-      <VBox layoutX="218.0" layoutY="129.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <VBox alignment="CENTER" fillWidth="false" prefWidth="100.0">
-               <children>
-                  <VBox>
-                     <children>
-                        <Label text="%lbl.premio.text" />
-                        <TextField fx:id="txtFldPremio" editable="false" />
-                     </children>
-                  </VBox>
-                  <VBox>
-                     <children>
-                        <Label text="%lbl.descricao.tex" />
-                        <TextField fx:id="txtFldDescricao" editable="false" />
-                     </children>
-                  </VBox>
-               </children>
-            </VBox>
-            <VBox prefHeight="312.0" prefWidth="600.0">
-               <children>
-                  <TableView fx:id="tblViewSorteio" prefHeight="306.0" prefWidth="600.0">
-                    <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
-                    </columns>
-                  </TableView>
-               </children>
-            </VBox>
-         </children>
-      </VBox>
-   </children>
+    <children>
+        <VBox layoutX="218.0" layoutY="129.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox alignment="CENTER" fillWidth="false" prefWidth="100.0">
+                    <children>
+                        <VBox>
+                            <children>
+                                <Label text="%lbl.premio.text" />
+                                <TextField fx:id="txtFldPremio" editable="false" />
+                            </children>
+                        </VBox>
+                        <VBox>
+                            <children>
+                                <Label text="%lbl.descricao.tex" />
+                                <TextField fx:id="txtFldDescricao" editable="false" />
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+                <VBox prefHeight="312.0" prefWidth="600.0">
+                    <children>
+                        <TableView fx:id="tbViewSorteio" prefHeight="306.0" prefWidth="600.0">
+                            <columns>
+                                <TableColumn editable="false" prefWidth="188.0" sortable="false" text="%lbl.nome.text">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="nome" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn editable="false" minWidth="3.0" prefWidth="411.0" sortable="false" text="%lbl.url.text">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="url" />
+                                    </cellValueFactory>
+                                </TableColumn>
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
 </AnchorPane>
